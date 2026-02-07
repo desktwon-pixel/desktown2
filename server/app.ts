@@ -1,6 +1,10 @@
 import "dotenv/config";
 import dns from "dns";
+import dns from 'node:dns';
+dns.setDefaultResultOrder('ipv4first'); // إجبار النظام على استخدام IPv4 أولاً
 
+import express from 'express'; // أو أي مكتبات أخرى تتبعها
+// ... باقي كود السيرفر
 // Force IPv4 globally for all network requests (database, fetch, etc.)
 // This resolves ENETUNREACH errors in environments with problematic IPv6 routing
 dns.setDefaultResultOrder('ipv4first');
