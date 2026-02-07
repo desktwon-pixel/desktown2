@@ -1,5 +1,7 @@
 import dns from 'dns';
-// dns.setDefaultResultOrder('ipv4first'); 
+if (dns.setDefaultResultOrder) {
+  dns.setDefaultResultOrder('ipv4first');
+} 
 
 process.on('uncaughtException', (err) => {
   console.error('Uncaught Exception:', err);
